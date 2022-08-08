@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePhonebooks extends Migration
+class CreateSalesRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePhonebooks extends Migration
      */
     public function up()
     {
-        Schema::create('phonebooks', function (Blueprint $table) {
+        Schema::create('sales_records', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone');
+            $table->string('category_id');
+            $table->string('buyer_name');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePhonebooks extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('phonebooks');
+        Schema::dropIfExists('sales_records');
     }
 }
