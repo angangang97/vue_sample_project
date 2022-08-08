@@ -11,16 +11,11 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('phonebooks/search/{term?}', 'PhonebooksController@index');
-Route::resource('phonebooks', 'PhonebooksController');
-// Route::resource('users', Controllers\PhonebooksController::class);
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');
 
-// Route::get('inventory/search/{term?}', 'InventoryController@index');
-// Route::resource('inventory', 'InventoryController');
 
 
 Auth::routes();
