@@ -12,7 +12,7 @@
         <div id="app">
         {{-- <users></users> --}}
           <navbar></navbar>
-          <home></home>
+          <router-view></router-view>
           {{-- <example-component />
           <router-view /> --}}
           {{-- <router-view></router-view> --}}
